@@ -19,16 +19,17 @@
     .hero-vertical {
     position: relative;
     overflow: hidden;
-    height: 315px; /* Define a altura fixa */
-    max-width: 851px; /* Define a largura máxima */
+    height: 566px; /* Define a altura fixa */
+    max-width: 2090px; /* Define a largura máxima */
     margin: 0 auto; /* Centraliza o container */
 }
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
 }
+
 
 .slogan {
     position: absolute;
@@ -737,11 +738,14 @@ footer p {
     </style>
 </head>
 <body>
+
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <div class="hero-vertical">
-        <img src="foto2.jpg" alt="Background" class="hero-image">
+        <img src="foto.jpg" alt="Background" class="hero-image">
         <div class="slogan">
           <h1><strong>Studio</strong> livia ferreira</h1>
           <h3 style="font-family: 'Inter', sans-serif; font-weight: 200;">Design de marcas</h3>
@@ -942,6 +946,33 @@ footer p {
 <footer>
     <p>&copy; 2025 - Feito por Layla Cristina</p>
 </footer>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const carousel = document.getElementById("carousel");
+      const indicators = document.querySelectorAll(".indicator");
+      let currentIndex = 0;
+      const totalSlides = 3; // Quantidade de slides
+  
+      function goToSlide(index) {
+        // Atualiza a posição do container
+        carousel.style.transform = `translateX(-${index * (100 / totalSlides)}%)`;
+        // Atualiza os indicadores
+        indicators.forEach(indicator => indicator.classList.remove("active"));
+        indicators[index].classList.add("active");
+      }
+  
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+      }
+  
+      // Altera o slide a cada 5 segundos (5000ms)
+      setInterval(nextSlide, 3000);
+    });
+  </script>
+  
 
    
 </body>
